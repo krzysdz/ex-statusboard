@@ -17,9 +17,7 @@ const repoQuerySnip = `{
   createdAt
   updatedAt
   pushedAt
-  stargazers {
-    totalCount
-  }
+  stargazerCount
   watchers {
     totalCount
   }
@@ -133,7 +131,7 @@ class Repo {
     this.created = repo.createdAt
     this.updated = repo.updatedAt
     this.pushed = repo.pushedAt
-    this.stars = repo.stargazers.totalCount
+    this.stars = repo.stargazerCount
     this.watchers = repo.watchers.totalCount
     this.forks = repo.forks.totalCount
     this.openIssues = repo.issues.totalCount
