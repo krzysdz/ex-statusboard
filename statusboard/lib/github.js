@@ -159,9 +159,9 @@ module.exports.getRepo =
    } catch (error) {
      error.code = 'GET_REPO_FAILED'
      Error.captureStackTrace(error, module.exports.getRepo)
-      console.error("#HERE!!!!")
-      console.error(util.inspect(e, { depth: null, breakLength: 120 }));
-      console.error("#END!!!!")
+     console.error("#HERE!!!!")
+     console.error(util.inspect(error, { depth: null, breakLength: 120 }));
+     console.error("#END!!!!")
      throw error
    }
  }
