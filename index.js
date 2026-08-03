@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const statusboard = require('@pkgjs/statusboard')
+const statusboard = require(path.join(__dirname, "statusboard"))
 
 module.exports = async (c) => {
   return statusboard(await config(c))
