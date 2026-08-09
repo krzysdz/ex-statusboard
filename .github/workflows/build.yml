@@ -19,19 +19,19 @@ concurrency:
 
 jobs:
   index:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    # environment:
+    #   name: github-pages
+    #   url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     # - name: Setup Pages
-    #   uses: actions/configure-pages@v5
-    - uses: actions/setup-node@v4
+    #   uses: actions/configure-pages@v6
+    - uses: actions/setup-node@v7
       with:
         node-version: 'lts/*'
-    - uses: actions/cache@v4
+    - uses: actions/cache@v6
       id: cache
       with:
         path: |
@@ -46,10 +46,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v5
       with:
         # Upload entire repository
         path: './build'
     # - name: Deploy to GitHub Pages
     #   id: deployment
-    #   uses: actions/deploy-pages@v4
+    #   uses: actions/deploy-pages@v5
