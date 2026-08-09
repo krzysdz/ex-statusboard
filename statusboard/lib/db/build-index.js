@@ -88,7 +88,7 @@ async function * loadProject (octokit, graphQL, project, config, _repo) {
   }
 
   // If we found a package.json we think it is a node package
-  if (pkg) {
+  if (pkg && !pkg.private) {
     yield projectDetail('PACKAGE_JSON', project, pkg)
 
     try {
